@@ -35,7 +35,7 @@ class ApiEngine {
                 .setParameter("cx", _cx)
                 .setParameter("key", _key)
                 .setParameter("q", query)
-                .setParameter("dateRestrict", "w2")
+                .setParameter("dateRestrict", "m1")
                 .setParameter("safe", "active")
                 .setParameter("searchType", "image")
                 .setParameter("imgType", "photo")
