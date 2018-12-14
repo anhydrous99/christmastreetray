@@ -1,3 +1,7 @@
+/*
+ * This class puts it all together
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

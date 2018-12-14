@@ -1,3 +1,8 @@
+/*
+ * This class deals with using the Apache Http client & org.json to interact with google's search JSON Search API
+ * & acquire images
+ */
+
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;

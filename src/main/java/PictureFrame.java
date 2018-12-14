@@ -1,3 +1,7 @@
+/*
+ * Inherits JFrame and is used to display the Christmas Tree Images
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
