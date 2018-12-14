@@ -6,30 +6,34 @@ import java.awt.image.BufferedImage;
 
 public class PictureFrame extends JFrame {
     PictureFrame(BufferedImage img) {
-        super("Christmas Tree");
+        super("Christmas Tree"); // Sets Window title
 
+        // Gets image dimensions
         int img_width = img.getWidth();
         int img_height = img.getHeight();
 
+        // Gets Default Screen's Dimensions
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         int src_width = gd.getDisplayMode().getWidth();
         int src_height = gd.getDisplayMode().getHeight();
 
+        // Scales image according to screen size
         AffineTransform at = new AffineTransform();
         double scale_suggestion = suggest_scale(src_width - 120, src_height - 120, img_width, img_height);
         at.scale(scale_suggestion, scale_suggestion);
         AffineTransformOp scaleOp = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
 
+        // Gets image new dimensions
         int new_width = (int) Math.round(img_width * scale_suggestion);
         int new_height = (int) Math.round(img_height * scale_suggestion);
 
         BufferedImage new_img = new BufferedImage(new_width, new_height, img.getType());
-        new_img = scaleOp.filter(img, new_img);
+        new_img = scaleOp.filter(img, new_img); // applies the scale
 
         ImageIcon icon = new ImageIcon(new_img);
 
         setLayout(new FlowLayout());
-        setSize(new_width + 30, new_height + 45);
+        setSize(new_width + 30, new_height + 50);
         JLabel lbl = new JLabel();
         lbl.setIcon(icon);
         add(lbl);
