@@ -13,7 +13,7 @@ import java.net.URL;
 
 public class EntryClass {
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(e -> createAndShowTray());
+        SwingUtilities.invokeLater(EntryClass::createAndShowTray);
     }
 
     private static void createAndShowTray() {
