@@ -13,12 +13,7 @@ import java.net.URL;
 
 public class EntryClass {
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                createAndShowTray();
-            }
-        });
+        SwingUtilities.invokeLater(e -> createAndShowTray());
     }
 
     private static void createAndShowTray() {
@@ -48,19 +43,11 @@ public class EntryClass {
         }
 
         // Action Listers
-        trayIcon.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                getAndDisplayChristmasTree();
-            }
-        });
+        trayIcon.addActionListener(e -> getAndDisplayChristmasTree());
 
-        exitItem.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        exitItem.addActionListener(e -> {
                 tray.remove(trayIcon);
                 System.exit(0);
-            }
         });
     }
 
